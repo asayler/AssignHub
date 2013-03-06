@@ -3,13 +3,15 @@ $(function () {
         $.fn.fakeIt = function(_out,_in,callback) {
             return this.click(function() {
                 $(_out).fadeOut('slow',function() {
-                    $(_in).fadeIn();
-                    callback();
+                    if (callback)
+                        callback();
+                    $(_in).hide().fadeIn('slow');
                 });
                 return false;
             });
         }
     })( jQuery );
+    $(".hidden-assignment").hide();
 
     $("#link-prof-login").fakeIt(".page-1",".page-2");
     $("#btn-prof-login").fakeIt(".page-2",".page-3", function() {
@@ -20,12 +22,23 @@ $(function () {
     $("#link-add-assignment").fakeIt(".page-3",".page-4");
     $("#link-search").fakeIt(".page-4",".page-5");
     $("#btn-search").fakeIt(".page-5",".page-6");
-    $("#link-fork").fakeIt(".page-6",".page-7");
-    $("#link-add-it").fakeIt(".page-7",".page-8");
-    $("#link-graph").fakeIt(".page-8",".page-9");
-    $("#link-back").fakeIt(".page-9",".page-10");
-    $("#link-deployed").fakeIt(".page-10",".page-11");
-    $("#link-prof-logout").fakeIt(".page-11",".page-12", function() {
+    $("#link-fork").fakeIt(".page-6",".page-3", function() {
+        $(".notice-bar span").text("Assignment Successfully Added!");
+        $(".hidden-assignment").show();
+        $(".cs-classes").prepend($(".hidden-assignment"));
+    });
+    $("#link-graph").fakeIt(".page-3",".page-9");
+    $("#link-back").fakeIt(".page-9",".page-3", function() {
+        $(".notice-bar span").text("");
+    });
+    $("#link-confirm").click(function() {
+        $(".notice-bar span").text("Assignment deployed!");
+        $("#modal-deploy").modal("hide");
+        $(".modal-backdrop").remove();
+        return false;
+    });
+
+    $("#link-prof-logout").fakeIt(".page-3",".page-12", function() {
         $(".links-student").show();
         $(".login-as").text("");
         $(".logout").hide();
