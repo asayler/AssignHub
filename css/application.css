@@ -33,14 +33,20 @@ body {
     text-decoration: underline;
 }
 .class-header {
-  background-color: #ededed;
+    background-color: #ededed;
+    padding: 0px 5px;
 }
 .class-sort {
     margin-bottom: 5px;
 }
 .class-list li.class-details {
     margin-bottom: 5px;
-    margin-left: -22px; /* Accomodate BS */
-    padding: 0px 10px 10px 10px;
     border: 1px solid #e5e5e5;
+}
+.class-session, .class-assignments {
+    padding: 0px 5px 10px 5px;
+}
+.class-list .span4, .class-list .span8 {
+    margin-left:0px;
+    padding-left:29px;
 }
