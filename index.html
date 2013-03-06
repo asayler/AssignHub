@@ -61,7 +61,7 @@
 
     <div class="container page-login page-2 hide">
       <form class="form-cool">
-        <h2 class="form-cool-heading">Please sign in</h2>
+        <h2 class="form-cool-heading">Sign In</h2>
         <input type="text" class="input-block-level" placeholder="Email address">
         <input type="password" class="input-block-level" placeholder="Password">
         <label class="checkbox">
@@ -266,14 +266,24 @@
       <a href="#" id="link-search" class="btn">Search other professor's assignments</a>
     </div> <!-- /add -->
 
-    <div class="container page-add-search page-5 hide">
-      <form class="form-cool">
-        <h2 class="form-cool-heading">Search</h2>
-        <input type="text" class="input-block-level" placeholder="Search">
-        <div>Category as dropdown?</div>
-        <input type="text" class="input-block-level" placeholder="Category">
-        <input type="text" class="input-block-level" placeholder="Comma separated tags">
-        <button id="btn-search" class="btn btn-large btn-primary" type="submit">Search</button>
+    <div class="container page-add-search page-5">
+      <form class="form-search">
+        <h2 class="form-search-heading">Search</h2>
+        <div class="input-append">
+          <input type="text" class="span3 search-query" placeholder="Search">
+          <button id="btn-search" class="btn btn-inverse" type="submit">Search</button>
+        </div>
+        <div class="search-category">
+          <span>Category:</span>
+          <select>
+            <option>Computer Science</option>
+            <option>Mathematics</option>
+          </select>
+        </div>
+        <div class="search-tags">
+          <span>Tags:</span>
+          <input type="text" placeholder="Comma separated tags">
+        </div>
       </form>
     </div> <!-- /search -->
 
@@ -319,7 +329,7 @@
 
     <div class="container page-student-login page-13 hide">
       <form class="form-cool">
-        <h2 class="form-cool-heading">Please sign in</h2>
+        <h2 class="form-cool-heading">Sign In</h2>
         <input type="text" class="input-block-level" placeholder="Email address">
         <input type="password" class="input-block-level" placeholder="Password">
         <label class="checkbox">
