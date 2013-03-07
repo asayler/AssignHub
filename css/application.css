@@ -113,3 +113,71 @@ body {
 .results-score h4 {
     display: inline;
 }
+
+/* Home page */
+
+.carousel .title{
+	color: #292929;
+    line-height: 1.25;
+    margin: 0;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.carousel .lead{
+	color: #7A7A7A;
+}
+
+.carousel {
+  margin-bottom: 60px;
+  margin-left: -200px;
+  margin-right: -150px;
+  margin-top: -50px;
+}
+
+.carousel .container {
+  position: relative;
+  z-index: 9;
+}
+
+.carousel-control {
+  /*height: 80px;
+  margin-top: 0;
+  font-size: 120px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+  background-color: transparent;*/
+  border: 0;
+  z-index: 10;
+}
+
+.carousel-inner {
+	padding-left: 20px;
+}
+
+.carousel .item {
+  height: 500px;
+}
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+.carousel-caption {
+  background-color: transparent;
+  position: static;
+  max-width: 550px;
+  padding: 0 20px;
+  margin-top: 200px;
+}
+.carousel-caption h1,
+.carousel-caption .lead {
+  margin: 0;
+  line-height: 1.25;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+.carousel-caption .btn {
+  margin-top: 10px;
+}
+
