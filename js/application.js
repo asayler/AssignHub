@@ -46,7 +46,7 @@ $(function () {
     $("#link-student-login").fakeIt(".page-12",".page-13");
     $("#btn-student-login").fakeIt(".page-13",".page-14", function() {
         $(".links-student").hide();
-        $(".notice-bar span").hide();
+        //$(".notice-bar span").hide();
         $(".login-as").text("Logged in as Cyclops");
         $(".notice-bar span").text("New Assignment Posted for CU101");
         $(".logout").show();
