@@ -27,13 +27,11 @@ $(function () {
         $(".hidden-assignment").show();
         $(".cs-classes").prepend($(".hidden-assignment"));
     });
-    $("#link-graph").fakeIt(".page-3",".page-9");
-    $("#link-back").fakeIt(".page-9",".page-3", function() {
-        $(".notice-bar span").text("");
-    });
     $("#link-confirm").click(function() {
         $(".notice-bar span").text("Assignment deployed!");
         $("#modal-deploy").modal("hide");
+        $("#deploy-link").remove();
+        $("#graph-link").before($("#update-link").clone()).before(" | ");
         $(".modal-backdrop").remove();
         return false;
     });
@@ -46,9 +44,8 @@ $(function () {
     $("#link-student-login").fakeIt(".page-12",".page-13");
     $("#btn-student-login").fakeIt(".page-13",".page-14", function() {
         $(".links-student").hide();
-        //$(".notice-bar span").hide();
         $(".login-as").text("Logged in as Cyclops");
-        $(".notice-bar span").text("New Assignment Posted for CU101");
+        $(".notice-bar span").text("New Assignment Posted for CS101!");
         $(".logout").show();
     });
 });
