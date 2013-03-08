@@ -170,7 +170,7 @@
                     <li>
                       Assignment 3: <a href="#">Research Your Favorite Mutant</a> | 
                       Due date: <span class="text-info">March 8, 2013</span>
-                      <a href="#" class="btn btn-mini btn-info"><i class="icon-flag"></i> Update</a> | 
+                      <a href="#" id="update-link" class="btn btn-mini btn-info"><i class="icon-flag"></i> Update</a> | 
                       <a href="#" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a> | 
                       <a href="#" class="btn btn-mini"><i class="icon-pencil"></i> Edit</a> |
                       <a href="#" class="btn btn-mini btn-danger"><i class="icon-remove"></i> Delete</a>
@@ -481,17 +481,6 @@
       </ul>
     </div> <!-- /results -->
 
-    <div class="container page-graph page-9 hide">
-      <h2>Assignment Graph</h2>
-      <p><img src="img/UpdateGraph.png" alt=""></p>
-      <a href="#" id="link-back" class="btn">Back</a>
-    </div> <!-- /graph -->
-
-    <div class="container page-deployed page-11 hide">
-      <h2>Deployed Successfully</h2>
-      <p>TODO</p>
-    </div> <!-- /deployed -->
-
     <div class="container page-logout page-12 hide">
       <h3>Successful logout</h3>
       <p>Feel free to continue to browse our database of assignments, maybe something will catch your eye!</p>
@@ -513,7 +502,7 @@
 
     <div class="container page-assignment-alert page-14 hide">
       <div class="text-center notice notice-bar">
-        <span class="label label-important">New Assignment Posted for CS101</span>
+        <span class="label label-important"></span>
       </div>
 
       <h2>Classes</h2>
@@ -642,8 +631,8 @@
     <li class="hidden-assignment">
       Assignment 3: <a href="#">Intro to Data Structures</a> | 
       Due date: <span class="text-info">No DUE DATE set</span> 
-      <a href="#modal-deploy" class="btn btn-mini btn-info" data-toggle="modal"><i class="icon-flag"></i> Deploy</a> | 
-      <a href="#" id="link-graph" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a> | 
+      <a href="#modal-deploy" id="deploy-link" class="btn btn-mini btn-info" data-toggle="modal"><i class="icon-flag"></i> Deploy</a> | 
+      <a href="#modal-graph" id="graph-link" class="btn btn-info btn-mini" data-toggle="modal"><i class="icon-random"></i> Graph</a> |
       <a href="#" class="btn btn-mini"><i class="icon-pencil"></i> Edit</a> |
       <a href="#" class="btn btn-mini btn-danger"><i class="icon-remove"></i> Delete</a> 
     </li>
@@ -672,9 +661,22 @@
         <p>A B-Tree assignment. Students design and implement their own B-tree. A code skeleton is included.</p>
       </div>
       <div class="modal-footer">
-        <a href="#" id="data-done" class="btn" data-dismiss="modal">Ok</a>
+        <a href="#" class="btn" data-dismiss="modal">Ok</a>
       </div>
     </div>
+
+    <div id="modal-graph" class="modal hide fade">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Assignment Graph History</h3>
+      </div>
+      <div class="modal-body">
+        <img src="img/UpdateGraph.png" alt="">
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Ok</a>
+      </div>
+    </div> <!-- /graph -->
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
