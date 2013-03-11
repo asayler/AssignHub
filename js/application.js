@@ -33,4 +33,9 @@ $(function () {
     $("#link-back").fakeIt(".page-2",".page-1", function() {
        $("#link-sign-up").show();
     });
+
+    $("#link-submit-email").fakeIt(".page-2",".page-1", function() {
+       $("#link-sign-up").show();
+       $(".notice-bar span").text("Email Successfully Submitted!");
+    });
 });
