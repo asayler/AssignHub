@@ -27,6 +27,9 @@ $(function () {
     $("#link-sign-up-3").fakeIt(".page-1",".page-2", function() {
        $("#link-sign-up").hide();
     });
+    $("#link-sign-up-4").fakeIt(".page-1",".page-2", function() {
+       $("#link-sign-up").hide();
+    });
     $("#link-home").fakeIt(".page-2",".page-1", function() {
        $("#link-sign-up").show();
     });
