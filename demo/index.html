@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>AssignHub | The Social Way to Share Assignments</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/application.css" rel="stylesheet"> <!-- Application must be before responsive -->
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">AssignHub</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              <span class="links-prof">
+                <a href="#" id="link-prof-login" class="navbar-link">Login</a> |
+                <a href="#" class="navbar-link">Register</a>
+              </span>
+              <span class="links-student hide">
+                <a href="#" id="link-student-login" class="navbar-link">Login</a> |
+                <a href="#" class="navbar-link">Register</a>
+              </span>
+              <span class="login-as"></span>
+              <span class="logout hide"> | 
+                <a href="#" id="link-prof-logout" class="navbar-link">Logout</a>
+              </span>
+            </p>
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container page-main page-1">
+      	<div id="myCarousel" class="carousel">
+		  <div class="carousel-inner">
+			<div class="item active">
+			  <img src="/img/linedPaperBkg.jpg" alt="">
+			  <div class="container">
+				<div class="carousel-caption">
+				  <h1 class="title">Assign Hub</h1>
+				  <p class="lead">View assignments from renowned professors across the country. Create specialized assignments, deploy to all your students, and automatically grade all submissions.</p>
+				  <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+				</div>
+			  </div>
+			</div>
+			<div class="item">
+			  <img src="/img/barGraphBkg.png" alt="">
+			  <div class="container">
+				<div class="carousel-caption">
+				  <h1 class="title">See Results</h1>
+				  <p class="lead">Immediately see an increase in time that professors and TAs can spend helping students instead of writing, deploying, and grading assignments.</p>
+				  <a class="btn btn-large btn-primary" href="#">Learn more</a>
+				</div>
+			  </div>
+			</div>
+			<div class="item">
+			  <img src="/img/profBkg.png" alt="">
+			  <div class="container">
+				<div class="carousel-caption">
+				  <h1 class="title">By the best, for the best</h1>
+				  <p class="lead">Use assignments written by the top professors around the world. Create a class based on assignments from CMU, MIT, Starfleet, and others.</p>
+				  <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    
+    <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="/img/paperStack.jpg">
+        <h2 class="featurette-heading">Assign homework. <span class="muted">The way it was meant to be assigned.</span></h2>
+        <p class="lead">Forget unwieldy assignment distribution and collection, multi-hour grading sessions, and overworked IT departments. Just focus on what matters: Teaching.</p>
+      </div>
+    
+    <hr class="featurette-divider">
+
+      <div class="featurette" style="margin-bottom: 100px">
+        <img class="featurette-image pull-left" src="/img/clock.jpg">
+        <h2 class="featurette-heading">Deploy and grade assignments. <span class="muted">In a single click.</span></h2>
+        <p class="lead">Don't waste time setting up servers for every new assignment. Let AssignHub do that for you. With single-click deployment, there's no more IT headaches.</p>
+      </div>
+    </hr>
+    
+    </div> 
+    <!-- /main -->
+
+    <div class="container page-login page-2 hide">
+      <form class="form-cool">
+        <h2 class="form-cool-heading">Sign In</h2>
+        <input type="text" class="input-block-level" placeholder="Email address">
+        <input type="password" class="input-block-level" placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button id="btn-prof-login" class="btn btn-large btn-primary" type="submit">Sign in</button>
+      </form>
+    </div> <!-- /login -->
+
+    <div class="container page-classes page-3 hide">
+      <div class="text-center notice notice-bar">
+        <span class="label label-success"></span>
+      </div>
+
+      <h2>Classes</h2>
+      <div class="class-sort">
+        Sort by: <a href="#" class="active">In Session</a> | <a href="#">Start Date</a> | <a href="#">Assignment Due Date</a>
+      </div>
+      <ul class="unstyled class-list">
+        <li class="class-details">
+          <h3 class="class-header">Being a Mutant I, MU101</h3>
+          <div class="row">
+            <div class="span4">
+              <div class="class-session">
+                <h4>Term Information</h4>
+                <div>
+                  Course Name: <span class="text-info">Being a Mutant I</span>
+                </div>
+                <div>
+                  Course Category: <span class="text-info">MU</span>
+                </div>
+                <div>
+                  Course Number: <span class="text-info">101</span>
+                </div>
+                <div>
+                  Term begins: <span class="text-info">January, 2013</span>
+                </div>
+                <div>
+                  Term ends: <span class="text-info">May, 2013</span>
+                </div>
+                <div>
+                  Number of Students: <span class="text-info">12</span>
+                </div>
+              </div>
+            </div>
+            <div class="span8">
+              <div class="class-assignments">
+                <h4>Assignments</h4>
+                <a href="#" class="btn"><i class="icon-plus-sign"></i> Add Assignment</a>
+                <div>
+                  <h5>Upcoming Assignments</h5>
+                  <ul class="unstyled">
+                    <li>
+                      Assignment 3: <a href="#">Research Your Favorite Mutant</a> | 
+                      Due date: <span class="text-info">March 8, 2013</span>
+                      <a href="#" id="update-link" class="btn btn-mini btn-info"><i class="icon-flag"></i> Update</a> | 
+                      <a href="#" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a> | 
+                      <a href="#" class="btn btn-mini"><i class="icon-pencil"></i> Edit</a> |
+                      <a href="#" class="btn btn-mini btn-danger"><i class="icon-remove"></i> Delete</a>
+                    </li>
+                    <li>
+                      Assignment 4: <a href="#">Defeat Magneto</a> | 
+                      Due date: <span class="text-info">March 15, 2013</span>
+                      <a href="#" class="btn btn-mini btn-info"><i class="icon-flag"></i> Update</a> | 
+                      <a href="#" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a> | 
+                      <a href="#" class="btn btn-mini"><i class="icon-pencil"></i> Edit</a> |
+                      <a href="#" class="btn btn-mini btn-danger"><i class="icon-remove"></i> Delete</a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h5>Completed Assignments</h5>
+                  <ul class="unstyled">
+                    <li>
+                      Assignment 1: <a href="#">Design a Uniform</a> | 
+                      Due date: <span class="text-info">February 2, 2013</span>
+                      <a href="#" class="btn btn-mini btn-info"><i class="icon-flag"></i> Update</a> | 
+                      <a href="#" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a> | 
+                      <a href="#" class="btn btn-mini"><i class="icon-pencil"></i> Edit</a> |
+                      <a href="#" class="btn btn-mini btn-danger"><i class="icon-remove"></i> Delete</a>
+                    </li>
+                    <li>
+                      Assignment 2: <a href="#">What is a Mutant (essay)?</a> | 
+                      Due date: <span class="text-info">February 21, 2013</span>
+                      <a href="#" class="btn btn-mini btn-info"><i class="icon-flag"></i> Update</a> | 
+                      <a href="#" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a> | 
+                      <a href="#" class="btn btn-mini"><i class="icon-pencil"></i> Edit</a> |
+                      <a href="#" class="btn btn-mini btn-danger"><i class="icon-remove"></i> Delete</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        <li>
+        <li class="class-details">
+          <h3 class="class-header">Computer Science for Mutants I, CS101</h3>
+          <div class="row">
+            <div class="span4">
+              <div class="class-session">
+                <h4>Term Information</h4>
+                <div>
+                  Course Name: <span class="text-info">Computer Science for Mutant I</span>
+                </div>
+                <div>
+                  Course Category: <span class="text-info">CS</span>
+                </div>
+                <div>
+                  Course Number: <span class="text-info">101</span>
+                </div>
+                <div>
+                  Term begins: <span class="text-info">January, 2013</span>
+                </div>
+                <div>
+                  Term ends: <span class="text-info">May, 2013</span>
+                </div>
+                <div>
+                  Number of Students: <span class="text-info">7</span>
+                </div>
+              </div>
+            </div>
+            <div class="span8">
+              <div class="class-assignments">
+                <h4>Assignments</h4>
+                <a href="#" id="link-add-assignment" class="btn"><i class="icon-plus-sign"></i> Add Assignment</a>
+                <div>
+                  <h5>Upcoming Assignments</h5>
+                  <ul class="unstyled cs-classes">
+                    <li>
+                      Assignment 2: <a href="#">Your First Algorithm</a> | 
+                      Due date: <span class="text-info">March 10, 2013</span>
+                      <a href="#" class="btn btn-mini btn-info"><i class="icon-flag"></i> Update</a> | 
+                      <a href="#" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a> | 
+                      <a href="#" class="btn btn-mini"><i class="icon-pencil"></i> Edit</a> |
+                      <a href="#" class="btn btn-mini btn-danger"><i class="icon-remove"></i> Delete</a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h5>Completed Assignments</h5>
+                  <ul class="unstyled">
+                    <li>
+                      Assignment 1: <a href="#">Hello, World!</a> | 
+                      Due date: <span class="text-info">February 7, 2013</span>
+                      <a href="#" class="btn btn-mini btn-info"><i class="icon-flag"></i> Update</a> | 
+                      <a href="#" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a> | 
+                      <a href="#" class="btn btn-mini"><i class="icon-pencil"></i> Edit</a> |
+                      <a href="#" class="btn btn-mini btn-danger"><i class="icon-remove"></i> Delete</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+        <li class="class-details">
+          <h3 class="class-header">Depressed in a Human World, HU301</h3>
+          <div class="row">
+            <div class="span4">
+              <div class="class-session">
+                <h4>Term Information</h4>
+                <div>
+                  Course Name: <span class="text-info">Depressed in a Human World</span>
+                </div>
+                <div>
+                  Course Category: <span class="text-info">HU</span>
+                </div>
+                <div>
+                  Course Number: <span class="text-info">301</span>
+                </div>
+                <div>
+                  Term begins: <span class="text-info">March, 2013</span>
+                </div>
+                <div>
+                  Term ends: <span class="text-info">July, 2013</span>
+                </div>
+                <div>
+                  Number of Students: <span class="text-info">0</span>
+                </div>
+              </div>
+            </div>
+            <div class="span8">
+              <div class="class-assignments">
+                <h4>Assignments</h4>
+                <a href="#" class="btn"><i class="icon-plus-sign"></i> Add Assignment</a>
+                <div>
+                  <h5>Upcoming Assignments</h5>
+                  <ul class="unstyled">
+                    <li>
+                      Assignment 1: <a href="#">Why Do Mutants Get Depressed?</a> | 
+                      Due date: <span class="text-info">March 8, 2013</span>
+                      <a href="#" class="btn btn-mini btn-info"><i class="icon-flag"></i> Update</a> | 
+                      <a href="#" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a> | 
+                      <a href="#" class="btn btn-mini"><i class="icon-pencil"></i> Edit</a> |
+                      <a href="#" class="btn btn-mini btn-danger"><i class="icon-remove"></i> Delete</a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h5>Completed Assignments</h5>
+                  <ul class="unstyled">
+                    <li>
+                      None
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div> <!-- /classes -->
+
+    <div class="container page-add page-4 hide">
+      <h2>Add Assignment</h2>
+      <p>
+      	Would you like to search our growing database of assignments or upload your own?
+      </p>
+      <br>
+      <a href="#" id="link-search" class="btn btn-inverse"><i class="icon-search icon-white"></i> Search Assignments</a>
+      <br><br>
+      <a href="#" id="link-search" class="btn"><i class="icon-upload"></i> Upload Assignment</a>
+    </div> <!-- /add -->
+
+    <div class="container page-search page-5 hide">
+      <form class="form-search">
+        <h2 class="form-search-heading">Search</h2>
+        <div class="input-append">
+          <input type="text" class="span3 search-query" placeholder="Search">
+          <button id="btn-search" class="btn btn-inverse" type="submit">Search</button>
+        </div>
+        <div class="search-category">
+          <span>Category:</span>
+          <select>
+            <option>Computer Science</option>
+            <option>Mathematics</option>
+          </select>
+        </div>
+        <div class="search-tags">
+          <span>Tags:</span>
+          <input type="text" placeholder="Comma separated tags">
+        </div>
+      </form>
+    </div> <!-- /search -->
+
+    <div class="container page-results page-6 hide">
+      <h2>Search Results</h2>
+      <div class="results-number">
+        Showing 5 of 5 results.
+      </div>
+      <div class="results-sort">
+        Sort by: <a href="#" class="active">Score</a> | 
+        <a href="#">Downloads</a> | 
+        <a href="#">Activity</a> |
+        <a href="#">Forks</a>
+      </div>
+      <ul class="unstyled results-list">
+        <li class="results-details">
+          <h3 class="results-header text-success">Intro to Data Structures</h3>
+          <div class="row">
+            <div class="span3">
+              <div class="results-score">
+                <a href="#"><i class="icon-thumbs-up"></i></a>
+                <h4 class="text-success">98</h4>
+                <a href="#"><i class="icon-thumbs-down"></i></a>
+                <a href="#" id="link-fork" class="btn btn-inverse push-right10"><i class="icon-share icon-white"></i> Fork</a>
+              </div>
+            </div>
+            <div class="span9">
+              <div class="results-info">
+                <div>
+                  <a href="#modal-details" class="btn btn-primary" data-toggle="modal">Details</a>
+                  <a href="#" class="text-info">Magneto</a> at <a href="#" class="text-info">Brotherhood of Mutants</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <li>
+        <li class="results-details">
+          <h3 class="results-header text-success">Advanced Data Structures</h3>
+          <div class="row">
+            <div class="span3">
+              <div class="results-score">
+                <a href="#"><i class="icon-thumbs-up"></i></a>
+                <h4 class="text-success">96</h4>
+                <a href="#"><i class="icon-thumbs-down"></i></a>
+                <a href="#" class="btn btn-inverse push-right10"><i class="icon-share icon-white"></i> Fork</a>
+              </div>
+            </div>
+            <div class="span9">
+              <div class="results-info">
+                <div>
+                  <a href="#" class="btn btn-primary">Details</a>
+                  <a href="#" class="text-info">Beast</a> at <a href="#" class="text-info">Charles Xavier's School for Gifted Youngsters</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <li>
+        <li class="results-details">
+          <h3 class="results-header text-warning">Data Structures 101</h3>
+          <div class="row">
+            <div class="span3">
+              <div class="results-score">
+                <a href="#"><i class="icon-thumbs-up"></i></a>
+                <h4 class="text-warning">84</h4>
+                <a href="#"><i class="icon-thumbs-down"></i></a>
+                <a href="#" class="btn btn-inverse push-right10"><i class="icon-share icon-white"></i> Fork</a>
+              </div>
+            </div>
+            <div class="span9">
+              <div class="results-info">
+                <div>
+                  <a href="#" class="btn btn-primary">Details</a>
+                  <a href="#" class="text-info">Storm</a> at <a href="#" class="text-info">Charles Xavier's School for Gifted Youngsters</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <li>
+        <li class="results-details">
+          <h3 class="results-header text-warning">Data Structures</h3>
+          <div class="row">
+            <div class="span3">
+              <div class="results-score">
+                <a href="#"><i class="icon-thumbs-up"></i></a>
+                <h4 class="text-warning">72</h4>
+                <a href="#"><i class="icon-thumbs-down"></i></a>
+                <a href="#" class="btn btn-inverse push-right10"><i class="icon-share icon-white"></i> Fork</a>
+              </div>
+            </div>
+            <div class="span9">
+              <div class="results-info">
+                <div>
+                  <a href="#" class="btn btn-primary">Details</a>
+                  <a href="#" class="text-info">Wolverine</a> at <a href="#" class="text-info">Canada</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <li>
+        <li class="results-details">
+          <h3 class="results-header text-error">Introductory Data Structures</h3>
+          <div class="row">
+            <div class="span3">
+              <div class="results-score">
+                <a href="#"><i class="icon-thumbs-up"></i></a>
+                <h4 class="text-error">68</h4>
+                <a href="#"><i class="icon-thumbs-down"></i></a>
+                <a href="#" class="btn btn-inverse push-right10"><i class="icon-share icon-white"></i> Fork</a>
+              </div>
+            </div>
+            <div class="span9">
+              <div class="results-info">
+                <div>
+                  <a href="#" class="btn btn-primary">Details</a>
+                  <a href="#" class="text-info">Tony Stark</a> at <a href="#" class="text-info">Stark Enterprises</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <li>
+      </ul>
+    </div> <!-- /results -->
+
+    <div class="container page-logout page-12 hide">
+      <h3>Successful logout</h3>
+      <p>Feel free to continue to browse our database of assignments, maybe something will catch your eye!</p>
+      <a href="#" id="link-search" class="btn btn-info"><i class="icon-search icon-white"></i> View All Assignments</a>
+      
+    </div> <!-- /deployed -->
+
+    <div class="container page-student-login page-13 hide">
+      <form class="form-cool">
+        <h2 class="form-cool-heading">Sign In</h2>
+        <input type="text" class="input-block-level" placeholder="Email address">
+        <input type="password" class="input-block-level" placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button id="btn-student-login" class="btn btn-large btn-primary" type="submit">Sign in</button>
+      </form>
+    </div> <!-- /student -->
+
+    <div class="container page-assignment-alert page-14 hide">
+      <div class="text-center notice notice-bar">
+        <span class="label label-important"></span>
+      </div>
+
+      <h2>Classes</h2>
+      <div class="class-sort">
+        Sort by: <a href="#" class="active">In Session</a> | <a href="#">Start Date</a> | <a href="#">Assignment Due Date</a>
+      </div>
+      <ul class="unstyled class-list">
+        <li class="class-details">
+          <h3 class="class-header">Computer Science for Mutants I, CS101</h3>
+          <div class="row">
+            <div class="span4">
+              <div class="class-session">
+                <h4>Term Information</h4>
+                <div>
+                  Course Name: <span class="text-info">Computer Science for Mutant I</span>
+                </div>
+                <div>
+                  Course Category: <span class="text-info">CS</span>
+                </div>
+                <div>
+                  Course Number: <span class="text-info">101</span>
+                </div>
+                <div>
+                  Term begins: <span class="text-info">January, 2013</span>
+                </div>
+                <div>
+                  Term ends: <span class="text-info">May, 2013</span>
+                </div>
+                <div>
+                  Number of Students: <span class="text-info">7</span>
+                </div>
+              </div>
+            </div>
+            <div class="span8">
+              <div class="class-assignments">
+                <h4>Assignments</h4>
+                <div>
+                  <h5>Upcoming Assignments</h5>
+                  <ul class="unstyled"><li>
+                      Assignment 3: <a href="#">Intro to Data Structures</a> | 
+                      Due date: <span class="text-info">No DUE DATE</span>
+                      <a href="#" class="btn btn-mini btn-success"><i class="icon-pencil"></i> Turn In</a> | 
+                      <a href="#" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a>
+                    </li>
+                    <li>
+                      Assignment 2: <a href="#">Your First Algorithm</a> | 
+                      Due date: <span class="text-info">March 10, 2013</span>
+                      <a href="#" class="btn btn-mini btn-success"><i class="icon-pencil"></i> Turn In</a> | 
+                      <a href="#" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h5>Completed Assignments</h5>
+                  <ul class="unstyled">
+                    <li>
+                      Assignment 1: <a href="#">Hello, World!</a> | 
+                      Due date: <span class="text-info">February 7, 2013</span> 
+                      <a href="#" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a> | 
+                      <a href="#" class="btn btn-mini"><i class="icon-flag"></i> View Grade</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="class-details">
+          <h3 class="class-header">Being a Mutant II, MU201</h3>
+          <div class="row">
+            <div class="span4">
+              <div class="class-session">
+                <h4>Term Information</h4>
+                <div>
+                  Course Name: <span class="text-info">Being a Mutant II</span>
+                </div>
+                <div>
+                  Course Category: <span class="text-info">MU</span>
+                </div>
+                <div>
+                  Course Number: <span class="text-info">201</span>
+                </div>
+                <div>
+                  Term begins: <span class="text-info">January, 2013</span>
+                </div>
+                <div>
+                  Term ends: <span class="text-info">May, 2013</span>
+                </div>
+                <div>
+                  Number of Students: <span class="text-info">4</span>
+                </div>
+              </div>
+            </div>
+            <div class="span8">
+              <div class="class-assignments">
+                <h4>Assignments</h4>
+                <div>
+                  <h5>Upcoming Assignments</h5>
+                  <ul class="unstyled">
+                    <li>
+                      Assignment 2: <a href="#">Dealing with PR</a> | 
+                      Due date: <span class="text-info">March 17, 2013</span>
+                      <a href="#" class="btn btn-mini btn-success"><i class="icon-pencil"></i> Turn In</a> | 
+                      <a href="#" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h5>Completed Assignments</h5>
+                  <ul class="unstyled">
+                    <li>
+                      Assignment 1: <a href="#">Secret Lairs (essay)</a> | 
+                      Due date: <span class="text-info">February 16, 2013</span> 
+                      <a href="#" class="btn btn-info btn-mini"><i class="icon-random"></i> Graph</a> | 
+                      <a href="#" class="btn btn-mini"><i class="icon-flag"></i> View Grade</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        <li>
+      </ul>
+    </div> <!-- /alert -->
+
+    <li class="hidden-assignment">
+      Assignment 3: <a href="#">Intro to Data Structures</a> | 
+      Due date: <span class="text-info">No DUE DATE set</span> 
+      <a href="#modal-deploy" id="deploy-link" class="btn btn-mini btn-info" data-toggle="modal"><i class="icon-flag"></i> Deploy</a> | 
+      <a href="#modal-graph" id="graph-link" class="btn btn-info btn-mini" data-toggle="modal"><i class="icon-random"></i> Graph</a> |
+      <a href="#" class="btn btn-mini"><i class="icon-pencil"></i> Edit</a> |
+      <a href="#" class="btn btn-mini btn-danger"><i class="icon-remove"></i> Delete</a> 
+    </li>
+
+    <div id="modal-deploy" class="modal hide fade">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Deploy Assignment to Students?</h3>
+      </div>
+      <div class="modal-body">
+        <p>Deploy Assignment 3: Intro to Data Structures to students?</p>
+        <p class="text-warning">Warning: Assignment 3 is currently missing a due date.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Cancel</a>
+        <a href="#" id="link-confirm" class="btn btn-primary">Yes, Deploy!</a>
+      </div>
+    </div>
+    
+    <div id="modal-details" class="modal hide fade">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Intro to Data Structures</h3>
+      </div>
+      <div class="modal-body">
+        <p>A B-Tree assignment. Students design and implement their own B-tree. A code skeleton is included.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Ok</a>
+      </div>
+    </div>
+
+    <div id="modal-graph" class="modal hide fade">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Assignment Graph History</h3>
+      </div>
+      <div class="modal-body">
+        <img src="/img/UpdateGraph.png" alt="">
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Ok</a>
+      </div>
+    </div> <!-- /graph -->
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/application.js"></script>
+
+  </body>
+</html>
+
