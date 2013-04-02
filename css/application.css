@@ -48,7 +48,9 @@ body {
 .class-sort {
     margin-bottom: 5px;
 }
-.class-list .span4, .class-list .span8,
+.class-list .span3, .class-list .span4, .class-list .span5,
+.class-list .span6, .class-list .span7, .class-list .span8,
+.class-list .span9, .class-list .span10, .class-list .span11,
 .class-list .span12 {
     margin-left:0px;
     padding-left:29px;
@@ -98,7 +100,7 @@ body {
 }
 .results-list .span3, .results-list .span9 {
     margin-left:0px;
-    padding-left:29px;
+    padding-left:10px;
 }
 .results-list li.results-details {
     margin-bottom: 5px;

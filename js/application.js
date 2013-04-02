@@ -28,12 +28,14 @@ $(function () {
     $("#link-fork").fakeIt(".page-6",".page-3", function() {
         $(".notice-bar span").text("Assignment Successfully Added!");
         $(".hidden-assignment").show();
+        $(".no-assignments").remove();
         $(".cs-classes").prepend($(".hidden-assignment"));
     });
     $("#link-confirm").click(function() {
         $(".notice-bar span").text("Assignment deployed!");
         $("#modal-deploy").modal("hide");
         $("#deploy-link").remove();
+        $(".to-remove").remove();
         $("#graph-link").before($("#update-link").clone()).before(" | ");
         $(".modal-backdrop").remove();
         return false;
