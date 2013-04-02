@@ -40,7 +40,6 @@ $(function () {
         $(".modal-backdrop").remove();
         return false;
     });
-
     $("#link-prof-logout").fakeIt(".page-3",".page-12", function() {
         $(".links-student").show();
         $(".login-as").text("");
